@@ -1,0 +1,28 @@
+version: "3"
+services:
+  odoo-13:
+    image: anrainun/test-odoo-13
+    depends_on:
+      - db-odoo-13
+    container_name: 'odoo-13'
+    ports:
+      - "8013:8069"
+#    entrypoint: ["python3", "/home/odoo/src/odoo/odoo-bin", "-c", "/home/odoo/config/odoo.conf"]
+    volumes:
+      - odoo-13-web-data:/home/odoo/web-data
+      - ../extra-addons:/home/odoo/src/extra-addons
+      - ../odoo:/home/odoo/src/odoo
+      - ../config:/home/odoo/config
+  db-odoo-13:
+    image: postgres:12
+    container_name: 'odoo-13-db'
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-13-db-data:/var/lib/postgresql/data/pgdata
+volumes:
+  odoo-13-web-data:
+  odoo-13-db-data:
