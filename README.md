@@ -12,7 +12,7 @@ Acceder a la carpeta **docker-compose** y levantar el servicio.
 >`docker-compose up -d`
 
 ## Nota
-Para ejecutar en IDE Pycharm Pro comentar la linea `entrypoint: ["python3", "/home/odoo/src/odoo/odoo-bin", "-c", "/home/odoo/config/odoo.conf"]` y realizar la configuracion correspondiente.
+Para ejecutar en el IDE Pycharm Professional comentar la linea `entrypoint: ["python3", "/home/odoo/src/odoo/odoo-bin", "-c", "/home/odoo/config/odoo.conf"]` del archivo docker-compose.yml y realizar la siguiente configuracion:.
 
 ![img.png](config_pycharm.png)
 
