@@ -7,7 +7,7 @@ services:
     container_name: 'odoo-13'
     ports:
       - "8013:8069"
-#    entrypoint: ["python3", "/home/odoo/src/odoo/odoo-bin", "-c", "/home/odoo/config/odoo.conf"]
+    entrypoint: ["python3", "/home/odoo/src/odoo/odoo-bin", "-c", "/home/odoo/config/odoo.conf"]
     volumes:
       - odoo-13-web-data:/home/odoo/web-data
       - ../extra-addons:/home/odoo/src/extra-addons
